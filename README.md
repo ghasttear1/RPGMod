@@ -1,54 +1,29 @@
 # RPGMod
+https://github.com/ghasttear1/RPGMod
 
-This mod is highly configurable allowing you to have quests, boss chest drops and enemy dropping loot.
-
-![Image of questing](https://i.imgur.com/PUEVI0O.jpg)
-
-## Questing
-
-This mod offers a networked questing system that is synced with others who have the mod installed. Questing, UI and settings are highly customisable with the config.
-
-## Enemy Item Drops
-
-This mod has highly customisable enemy loot drops.
-
-## Configurability
-
-This mod has a large config with many values to change to your desire with the ability to reload on the go by pressing F6.
-
-## Known Issues
-
-This mod is WORK IN PROGRESS, meaning that there is a good chance that there are issues.
-
-If you find any issues with my mod please create a new issue on the github, you can find existing issues here:
-<https://github.com/ghasttear1/RPGMod/issues>
-
-## Installation
-
-1. Make sure BepInEx is installed correctly
-2. Move the `RPGMod.dll` into `Risk of Rain 2\BepInEx\plugins` folder
-3. Enjoy!
-
-## Updating
-
-When updating please delete your old config for the mod and let a new one get created (you can make a backup of the old one and copy old values over), as config descriptions and values get added and changed with most updates.
-
-## Changelog
-
-- 1.0.0: Mod release!
-- 1.0.1: Updated readme
-- 1.0.2: Fixed glitched first quest
-- 1.0.3: Fixed teleporter getting stuck, changed config reload to F6 (conflict with ROR2Cheats), added config types, fixed item drop spam, added new config for quest resetting on advancing stage, special thanks to @Targets for help debugging :)
-- 1.0.4: Removed debugging messages that were left in
-- 1.0.5: Small amount of code cleanup, fixed vertical UI bug and large UI bug, fixed disabling enemydrops making quest progress not work, fixed item spam when player dies or leaves, fixed moving from singleplayer game to multiplayer game, and more
-- 1.1.0: Added game scaling for drops helping even out drops experienced at early and end game, added chat message for help with those playing with unmodded players, changed the way the scene placement works making disabled spawns configurable, changed config defaults, descriptions and values
-- 1.1.1: Fixed the broken display caused from the latest game update
-- 1.1.2: Fixed the possibility of enemy survivors been chosen for a quest target
-- 1.2.0: Fixed mod to work with latest update - (had to remove chest drops from bosses as a configurable option as it broke)
-- 1.2.1: Reimplemented a fix that was previously in the mod hopefully fixing a problem with quests and particular enemies
-- 1.2.2: Fixed problem with multiple drops from a quest
-- 1.2.3: Fixed issue where depending on the computers localisation the config values would improperly be loaded
-
-## Contact
-
-You can find me on the modding discord, I'm new to modding but I will try my best to answer any questions.
+## Modify
+- PluginInfo-> 修改为 ```BepInPlugin("com.bamboo98.rpgmod", "RPGMod", "1.3.0")```
+- Quest-> 可定制翻译
+- Drop-> 新增掉落列表控制,支持ban物品,让物品不再出现在RPGMod的额外掉落中(不影响商店刷新和箱子掉落) 
+- Drop-> 新增幸运值是否影响掉落率的设定(始终不影响品质)
+- Drop-> 新增BOSS掉落物控制,以及BOSS掉落物是否随机掉落的选项
+- Drop-> 新增升级奖励,可以设定在等级提升时是否随机掉落一件1级物品(白色)
+- Drop-> 新增掉落时间间隔,可以设定在2次怪物掉落之间的最小时间间隔,有效防止后期大量刷怪时出现大量掉落物
+- Game-> 新增每回合开始时额外金钱奖励,可以设置为小箱子的金钱倍数+固定值,整合PocketMoneyMod
+- Game-> 新增怪物倍数(虚拟的人数倍数)设置,整合MultiplierMod
+- Director-> 新增指令```rpg_show_spawns```可以显示当前场景中可以生成的所有可互动物品的ID
+- Director-> 新增指令```rpg_set_multiplier n```设置当前关卡怪物倍数为n
+- Director-> 新增指令```rpg_get_multiplier```显示当前设置的怪物倍数
+## Modify(English)
+- PluginInfo-> modified to ```BepInPlugin("com.bamboo98.rpgmod", "RPGMod", "1.3.0")```
+- Quest-> Customizable translation
+- Drop-> Added drop list control to support ban items so that items no longer appear in RPGMod's extra drops (does not affect store refresh and box drop)
+- Drop-> Whether the added lucky value affects the drop rate setting (always does not affect the quality)
+- Drop-> Added BOSS drop control and options for whether or not BOSS drops are randomly dropped
+- Drop-> Added upgrade bonus, which can be set to randomly drop a level 1 item (white) when the level is raised.
+- Drop-> Add a drop interval, which can be set to the minimum time interval between 2 monster drops, effectively preventing a large amount of falling objects when a large number of monsters are wiped out later.
+- Game-> Add extra money bonus at the beginning of each round, can be set to small box of money multiple + fixed value, integrated with PocketMoneyMod
+- Game-> Add monster multiplier (virtual multiples) setting, integrated with MultiplierMod
+- Director-> Add command ```rpg_show_spawns``` to display the ID of all interactive items that can be generated in the current scene.
+- Director-> Add command ```rpg_set_multiplier n``` to set the current level monster multiplier to n
+- Director-> Add command ```rpg_get_multiplier``` to display the currently set monster multiplier
